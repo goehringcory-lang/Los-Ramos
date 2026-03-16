@@ -157,6 +157,49 @@
     });
   }
 
+  // --- Language toggle (EN/ES) ---
+  var langToggle = document.querySelector('.lang-toggle');
+  var currentLang = localStorage.getItem('losramos-lang') || 'en';
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('losramos-lang', lang);
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-es]').forEach(function (el) {
+      if (lang === 'es') {
+        if (!el.hasAttribute('data-en')) {
+          el.setAttribute('data-en', el.innerHTML);
+        }
+        el.innerHTML = el.getAttribute('data-es');
+      } else {
+        if (el.hasAttribute('data-en')) {
+          el.innerHTML = el.getAttribute('data-en');
+        }
+      }
+    });
+
+    // Toggle button label
+    var enLabel = langToggle.querySelector('.lang-toggle-en');
+    var esLabel = langToggle.querySelector('.lang-toggle-es');
+    if (lang === 'es') {
+      enLabel.style.display = 'none';
+      esLabel.style.display = '';
+    } else {
+      enLabel.style.display = '';
+      esLabel.style.display = 'none';
+    }
+  }
+
+  langToggle.addEventListener('click', function () {
+    setLanguage(currentLang === 'en' ? 'es' : 'en');
+  });
+
+  // Apply saved language on load
+  if (currentLang === 'es') {
+    setLanguage('es');
+  }
+
   // --- Hero parallax text (subtle) ---
   var heroContent = document.querySelector('.hero-content');
 
