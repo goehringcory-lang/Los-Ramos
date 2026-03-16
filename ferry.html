@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferry Schedule — Los Ramos, Ometepe Island</title>
+  <meta name="description" content="Ferry schedule between San Jorge and Ometepe Island, Nicaragua. Plan your trip to Los Ramos cultural immersion community.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .ferry-page { padding-top: calc(var(--nav-height) + 40px); }
+    .ferry-header { text-align: center; margin-bottom: 48px; }
+    .ferry-header p { margin: 16px auto 0; color: var(--color-earth-mid); font-size: 1.1rem; }
+    .ferry-schedules { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .ferry-schedule-item { text-align: center; }
+    .ferry-schedule-item h3 { margin-bottom: 16px; }
+    .ferry-schedule-item img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .ferry-back {
+      text-align: center;
+      margin-top: 32px;
+    }
+    .ferry-note {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      color: var(--color-earth-mid);
+      font-size: 0.95rem;
+      background: var(--color-earth-light);
+      padding: 20px;
+      border-radius: 8px;
+    }
+    @media (max-width: 768px) {
+      .ferry-schedules { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="nav scrolled" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Los Ramos — Home">
+        <img src="images/Logo.png" alt="Los Ramos logo" width="44" height="44">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#programs">Programs</a></li>
+        <li><a href="index.html#homestays">Homestays</a></li>
+        <li><a href="index.html#getting-here">Getting Here</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Book Now</a></li>
+      </ul>
+    </div>
+    <div class="nav-overlay" aria-hidden="true"></div>
+  </nav>
+
+  <main id="main" class="ferry-page section-padding">
+    <div class="container">
+      <div class="ferry-header">
+        <span class="about-label">Getting Here</span>
+        <h1>Ometepe Ferry Schedule</h1>
+        <p>Ferries run daily between San Jorge (mainland) and Moyogalpa (Ometepe Island). From Moyogalpa, Los Ramos is 16 km south — we can help arrange transport.</p>
+      </div>
+
+      <div class="ferry-note">
+        Schedules may change seasonally. We recommend confirming times locally or emailing us at <a href="mailto:losramoscommunity@gmail.com">losramoscommunity@gmail.com</a> before your trip.
+      </div>
+
+      <div class="ferry-schedules">
+        <div class="ferry-schedule-item">
+          <h3>San Jorge &rarr; Ometepe</h3>
+          <img src="images/Ferrysan jorge.jpg" alt="Ferry schedule from San Jorge to Ometepe Island showing departure times">
+        </div>
+        <div class="ferry-schedule-item">
+          <h3>Ometepe &rarr; San Jorge</h3>
+          <img src="images/ferryOmetepe.jpg" alt="Ferry schedule from Ometepe Island to San Jorge showing departure times">
+        </div>
+      </div>
+
+      <div class="ferry-back">
+        <a href="index.html" class="btn btn-green">&larr; Back to Los Ramos</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="index.html" class="footer-logo" aria-label="Back to home">
+          <img src="images/Logo.png" alt="Los Ramos logo">
+        </a>
+        <ul class="footer-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#programs">Programs</a></li>
+          <li><a href="index.html#homestays">Homestays</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="http://www.outmoreadventures.com" target="_blank" rel="noopener">OutMore Adventures</a></li>
+        </ul>
+      </div>
+      <p class="footer-copy">&copy; 2026 Los Ramos Community, Ometepe Island, Nicaragua. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
