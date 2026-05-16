@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://visitlosramos.com/sitemap.xml
