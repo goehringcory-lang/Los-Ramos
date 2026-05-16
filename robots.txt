@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://goehringcory-lang.github.io/Los-Ramos/sitemap.xml
