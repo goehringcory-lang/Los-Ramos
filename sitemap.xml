@@ -4,44 +4,76 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>https://goehringcory-lang.github.io/Los-Ramos/</loc>
+    <loc>https://visitlosramos.com/</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://goehringcory-lang.github.io/Los-Ramos/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://goehringcory-lang.github.io/Los-Ramos/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://goehringcory-lang.github.io/Los-Ramos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://visitlosramos.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://visitlosramos.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://visitlosramos.com/"/>
     <image:image>
-      <image:loc>https://goehringcory-lang.github.io/Los-Ramos/images/IMG_8709.JPG</image:loc>
+      <image:loc>https://visitlosramos.com/images/canoe-lake-nicaragua-ometepe.jpg</image:loc>
       <image:title>Local guides paddling a traditional canoe on Lake Nicaragua with Ometepe's volcano in the background</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://goehringcory-lang.github.io/Los-Ramos/images/Cookingclass.jpeg</image:loc>
+      <image:loc>https://visitlosramos.com/images/nicaraguan-cooking-class-banana-leaves.jpg</image:loc>
       <image:title>Cultural cooking class with local women in Los Ramos</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://goehringcory-lang.github.io/Los-Ramos/images/Mirador Horseback tour.JPG</image:loc>
+      <image:loc>https://visitlosramos.com/images/mirador-horseback-tour-lake-nicaragua.jpg</image:loc>
       <image:title>Horseback tour overlooking Lake Nicaragua from Ometepe Island</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://goehringcory-lang.github.io/Los-Ramos/images/Beekeeping.jpeg</image:loc>
+      <image:loc>https://visitlosramos.com/images/beekeeping-class-ometepe.jpg</image:loc>
       <image:title>Beekeeping class with local beekeepers on Ometepe Island</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://goehringcory-lang.github.io/Los-Ramos/images/Kayak.jpeg</image:loc>
+      <image:loc>https://visitlosramos.com/images/kayaking-istian-river-ometepe.jpg</image:loc>
       <image:title>Kayaking the Istian River on Ometepe Island</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://goehringcory-lang.github.io/Los-Ramos/images/full-hs3.jpg</image:loc>
+      <image:loc>https://visitlosramos.com/images/family-homestead-ometepe-volcano.jpg</image:loc>
       <image:title>A Los Ramos family homestead with Ometepe's volcano behind</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://visitlosramos.com/images/indigenous-family-los-ramos.jpg</image:loc>
+      <image:title>A grandmother and children of Los Ramos in front of their family homestead</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://visitlosramos.com/images/spanish-lessons-ometepe-immersion.jpg</image:loc>
+      <image:title>Spanish lessons with a community member on Ometepe Island</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://visitlosramos.com/images/bird-banding-ometepe-researchers.jpg</image:loc>
+      <image:title>Bird banding experience with local researchers on Ometepe Island</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://visitlosramos.com/images/los-ramos-theater-traditional-dance.jpg</image:loc>
+      <image:title>Los Ramos community theater traditional dance performance</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://visitlosramos.com/images/farm-to-table-fishing-ometepe.jpg</image:loc>
+      <image:title>Farm-to-table fishing tour on Lake Nicaragua</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://visitlosramos.com/images/hand-milking-cow-ometepe-farm.jpg</image:loc>
+      <image:title>Traditional hand-milking on a family farm in Los Ramos</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://goehringcory-lang.github.io/Los-Ramos/ferry.html</loc>
+    <loc>https://visitlosramos.com/ferry.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://visitlosramos.com/images/ferry-schedule-san-jorge-ometepe.jpg</image:loc>
+      <image:title>Ferry schedule from San Jorge to Ometepe Island</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://visitlosramos.com/images/ferry-schedule-ometepe-san-jorge.jpg</image:loc>
+      <image:title>Ferry schedule from Ometepe Island to San Jorge</image:title>
+    </image:image>
   </url>
 
 </urlset>
