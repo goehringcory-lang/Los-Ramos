@@ -56,6 +56,21 @@ propagates, `https://www.visitlosramos.com` will 301-redirect to `https://visitl
 > If `www` is not configured, tools that probe `www.visitlosramos.com` (including Google's tag
 > checker) will fail to find the site there — always test against the apex `visitlosramos.com`.
 
+## HTTPS / "Not secure" warning
+
+If the browser shows a **"Not secure"** warning on the live site, the fix is in GitHub, not in
+this repository's code (the site itself loads no insecure resources, and DNS already points at
+GitHub Pages correctly):
+
+1. Go to repo **Settings → Pages**.
+2. Check **Enforce HTTPS**.
+3. If the checkbox is greyed out with a message about the certificate, GitHub is still
+   provisioning the TLS certificate for `visitlosramos.com` — wait up to 24 h. If it stays stuck,
+   remove the custom domain on that page, save, re-add it, and try again; provisioning re-runs.
+
+Without **Enforce HTTPS**, `http://visitlosramos.com` is served as plain HTTP instead of
+redirecting to HTTPS, which is what triggers the browser warning.
+
 ## Analytics
 
 **Google Analytics 4** is installed via `gtag.js` on all three pages with Measurement ID
