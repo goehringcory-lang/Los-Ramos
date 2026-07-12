@@ -92,10 +92,10 @@
     });
   });
 
-  // --- Lightbox ---
+  // --- Lightbox (index.html only) ---
   const lightbox = document.getElementById('lightbox');
-  const lightboxImg = lightbox.querySelector('img');
-  const lightboxClose = lightbox.querySelector('.lightbox-close');
+  const lightboxImg = lightbox ? lightbox.querySelector('img') : null;
+  const lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
 
   function openLightbox(src, alt) {
     lightboxImg.src = src;
@@ -113,26 +113,28 @@
     document.body.style.overflow = '';
   }
 
-  // Attach click to all lightbox-trigger images
-  document.querySelectorAll('.lightbox-trigger').forEach(function (img) {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', function () {
-      // Use the full-size image if it's a thumbnail; otherwise use src
-      var src = this.getAttribute('data-full') || this.src;
-      openLightbox(src, this.alt);
+  if (lightbox) {
+    // Attach click to all lightbox-trigger images
+    document.querySelectorAll('.lightbox-trigger').forEach(function (img) {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function () {
+        // Use the full-size image if it's a thumbnail; otherwise use src
+        var src = this.getAttribute('data-full') || this.src;
+        openLightbox(src, this.alt);
+      });
     });
-  });
 
-  lightboxClose.addEventListener('click', closeLightbox);
+    lightboxClose.addEventListener('click', closeLightbox);
 
-  lightbox.addEventListener('click', function (e) {
-    if (e.target === lightbox) closeLightbox();
-  });
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
 
   // Escape key closes lightbox and mobile menu
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
-      if (lightbox.classList.contains('active')) closeLightbox();
+      if (lightbox && lightbox.classList.contains('active')) closeLightbox();
       if (navLinks.classList.contains('open')) closeMenu();
     }
   });
@@ -157,47 +159,50 @@
     });
   }
 
-  // --- Language toggle (EN/ES) ---
+  // --- Language toggle (EN/ES, index.html only) ---
   var langToggle = document.querySelector('.lang-toggle');
-  var currentLang = localStorage.getItem('losramos-lang') || 'en';
 
-  function setLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem('losramos-lang', lang);
-    document.documentElement.lang = lang;
+  if (langToggle) {
+    var currentLang = localStorage.getItem('losramos-lang') || 'en';
 
-    document.querySelectorAll('[data-es]').forEach(function (el) {
+    var setLanguage = function (lang) {
+      currentLang = lang;
+      localStorage.setItem('losramos-lang', lang);
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll('[data-es]').forEach(function (el) {
+        if (lang === 'es') {
+          if (!el.hasAttribute('data-en')) {
+            el.setAttribute('data-en', el.innerHTML);
+          }
+          el.innerHTML = el.getAttribute('data-es');
+        } else {
+          if (el.hasAttribute('data-en')) {
+            el.innerHTML = el.getAttribute('data-en');
+          }
+        }
+      });
+
+      // Toggle button label
+      var enLabel = langToggle.querySelector('.lang-toggle-en');
+      var esLabel = langToggle.querySelector('.lang-toggle-es');
       if (lang === 'es') {
-        if (!el.hasAttribute('data-en')) {
-          el.setAttribute('data-en', el.innerHTML);
-        }
-        el.innerHTML = el.getAttribute('data-es');
+        enLabel.style.display = 'none';
+        esLabel.style.display = '';
       } else {
-        if (el.hasAttribute('data-en')) {
-          el.innerHTML = el.getAttribute('data-en');
-        }
+        enLabel.style.display = '';
+        esLabel.style.display = 'none';
       }
+    };
+
+    langToggle.addEventListener('click', function () {
+      setLanguage(currentLang === 'en' ? 'es' : 'en');
     });
 
-    // Toggle button label
-    var enLabel = langToggle.querySelector('.lang-toggle-en');
-    var esLabel = langToggle.querySelector('.lang-toggle-es');
-    if (lang === 'es') {
-      enLabel.style.display = 'none';
-      esLabel.style.display = '';
-    } else {
-      enLabel.style.display = '';
-      esLabel.style.display = 'none';
+    // Apply saved language on load
+    if (currentLang === 'es') {
+      setLanguage('es');
     }
-  }
-
-  langToggle.addEventListener('click', function () {
-    setLanguage(currentLang === 'en' ? 'es' : 'en');
-  });
-
-  // Apply saved language on load
-  if (currentLang === 'es') {
-    setLanguage('es');
   }
 
   // --- Hero parallax text (subtle) ---

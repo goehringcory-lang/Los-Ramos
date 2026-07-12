@@ -56,9 +56,43 @@ propagates, `https://www.visitlosramos.com` will 301-redirect to `https://visitl
 > If `www` is not configured, tools that probe `www.visitlosramos.com` (including Google's tag
 > checker) will fail to find the site there — always test against the apex `visitlosramos.com`.
 
-## HTTPS / "Not secure" warning
+## Browser security warnings
 
-If the browser shows a **"Not secure"** warning on the live site, the fix is in GitHub, not in
+### Red "Dangerous site" / "Deceptive site ahead" page (Google Safe Browsing)
+
+If browsers show a **full-screen red warning** before the site loads, the domain has been
+flagged by Google Safe Browsing. The site's code has been audited and is clean — no forms, no
+logins, no downloads, no third-party scripts beyond Google Fonts and Google Analytics — so this
+is a false positive (or leftover reputation from a previous owner of the domain). **The flag can
+only be removed by asking Google to re-review the site.** Steps for the site owner:
+
+1. **Verify ownership in [Google Search Console](https://search.google.com/search-console).**
+   Add a *URL-prefix* property for `https://visitlosramos.com/`. The easiest verification method
+   is **Google Analytics** — the GA4 tag (`G-G204EQWS47`) is already in the `<head>` of every
+   page, so verification is automatic *if you sign in with the Google account that has edit
+   access to that GA4 property*. Fallback: choose the **HTML file** method and commit the
+   verification file to this repository's root.
+2. Open **Security & Manual Actions → Security issues**. This shows exactly what Google claims
+   (deceptive pages / malware / harmful downloads) and which URLs are affected.
+3. Click **Request review** and state briefly: *"Static informational tourism website for a
+   community project. No forms, no logins, no downloads, no user data collection. Content has
+   been reviewed and contains nothing deceptive or harmful."* Reviews typically resolve within
+   **1–3 days** (malware-class flags can take longer), plus up to 72 h for the warning to clear
+   from all browsers. Don't submit repeated requests — that slows the queue.
+4. **If the Security issues report is empty** but browsers still show the warning, report the
+   false positive directly at
+   <https://safebrowsing.google.com/safebrowsing/report_error/>.
+5. Check current status any time at
+   <https://transparencyreport.google.com/safe-browsing/search?url=visitlosramos.com>.
+
+> Note: no HTTP→HTTPS redirect script has been added to the pages, deliberately. GitHub Pages
+> already 301-redirects server-side when **Enforce HTTPS** is on, a client-side redirect adds no
+> security (it runs only after the insecure load), and adding redirect scripts while under
+> Safe Browsing review can itself look suspicious to scanners.
+
+### "Not secure" in the address bar (plain HTTP)
+
+If the browser shows a **"Not secure"** label next to the URL, the fix is in GitHub, not in
 this repository's code (the site itself loads no insecure resources, and DNS already points at
 GitHub Pages correctly):
 
