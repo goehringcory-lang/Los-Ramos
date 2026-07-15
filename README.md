@@ -90,6 +90,51 @@ only be removed by asking Google to re-review the site.** Steps for the site own
 > security (it runs only after the insecure load), and adding redirect scripts while under
 > Safe Browsing review can itself look suspicious to scanners.
 
+### "Your connection is not private" / `net::ERR_CERT_COMMON_NAME_INVALID`
+
+A **full-screen red "Your connection is not private"** warning (Chrome:
+`net::ERR_CERT_COMMON_NAME_INVALID`; Firefox: `SSL_ERROR_BAD_CERT_DOMAIN`; Safari: *"this website
+may be impersonating…"*) means the TLS certificate the server handed the browser does **not** list
+`visitlosramos.com` in its Common Name / Subject Alternative Names. On GitHub Pages this almost
+always means **GitHub has not (yet) provisioned the free Let's Encrypt certificate for the custom
+domain**, so it is falling back to its default certificate (issued for `*.github.io`, not this
+domain) — whose name doesn't match, hence the error.
+
+This is **not** a bug in this repository and **cannot be fixed by a commit**. DNS is already
+correct — the apex *and* `www` resolve to GitHub Pages' `185.199.108–111.153`, and the `CNAME`
+file is correct — so the fix is in **repo Settings → Pages** and, in rare cases, at the **DNS
+provider**. Work through these in order:
+
+1. **Re-provision the certificate.** Repo **Settings → Pages**. Confirm the custom domain reads
+   `visitlosramos.com` with a green check. If the HTTPS section shows a certificate error, or
+   **Enforce HTTPS** is greyed out with a "not yet available" / "provisioning" message: clear the
+   **Custom domain** field, **Save**, wait ~1 minute, re-enter `visitlosramos.com`, **Save** again.
+   That re-runs domain verification and re-requests the certificate. (The committed `CNAME` file
+   keeps the domain pinned across deploys — this toggle is only to re-trigger issuance; do **not**
+   delete `CNAME` from the repo.) Issuance is usually minutes but can take up to **24 h**; when it
+   completes, tick **Enforce HTTPS**.
+2. **Check for a blocking CAA record.** If a DNS `CAA` record exists that does not authorize Let's
+   Encrypt, GitHub can *never* issue the certificate and step 1 will never finish. Check with
+   `dig CAA visitlosramos.com +short` (or your DNS provider's dashboard). If **any** `CAA` record
+   is present, make sure one of them is `0 issue "letsencrypt.org"` — otherwise remove the `CAA`
+   records or add that line.
+3. **If this domain was ever used on another GitHub account or repo,** GitHub may refuse to issue
+   until ownership is re-proven: Settings → Pages will ask for a
+   `_github-pages-challenge-goehringcory-lang` **TXT** record — add it at the DNS provider, then
+   re-add the domain.
+4. **Test the apex, not `www`.** Load `https://visitlosramos.com` directly. The managed certificate
+   covers both the apex and `www`, but only once provisioning (step 1) has completed.
+5. **After it's fixed,** the browser may still show the old cached certificate — hard-reload, or
+   confirm in a fresh Incognito / Private window.
+
+Check the live certificate any time (a healthy result shows `subject=CN=visitlosramos.com` issued
+by Let's Encrypt, **not** `*.github.io`):
+
+```bash
+echo | openssl s_client -servername visitlosramos.com -connect visitlosramos.com:443 2>/dev/null \
+  | openssl x509 -noout -subject -issuer -dates
+```
+
 ### "Not secure" in the address bar (plain HTTP)
 
 If the browser shows a **"Not secure"** label next to the URL, the fix is in GitHub, not in
