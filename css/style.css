@@ -359,7 +359,7 @@ p {
   width: 100px;
   height: auto;
   margin: 0 auto 24px;
-  drop-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
 }
 
 .hero-tagline {

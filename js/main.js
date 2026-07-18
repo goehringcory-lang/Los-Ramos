@@ -30,8 +30,15 @@
 
   // --- Sticky nav background on scroll ---
   const nav = document.querySelector('.nav');
+  const hasHero = document.querySelector('.hero') !== null;
 
   function updateNav() {
+    // Pages without a hero (ferry, 404) keep the solid background —
+    // a transparent nav would put white links on a light page.
+    if (!hasHero) {
+      nav.classList.add('scrolled');
+      return;
+    }
     if (window.scrollY > 80) {
       nav.classList.add('scrolled');
     } else {
@@ -89,6 +96,12 @@
       const targetTop = target.getBoundingClientRect().top + window.scrollY - navHeight;
 
       window.scrollTo({ top: targetTop, behavior: 'smooth' });
+
+      // Skip link must actually move keyboard focus into the page
+      if (this.classList.contains('skip-link')) {
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      }
     });
   });
 
@@ -144,11 +157,20 @@
   if (copyBtn) {
     copyBtn.addEventListener('click', function () {
       var email = this.getAttribute('data-email');
+      if (!navigator.clipboard || !navigator.clipboard.writeText) {
+        // No clipboard API (e.g. insecure context) — show the address instead
+        copyBtn.textContent = email;
+        return;
+      }
       navigator.clipboard.writeText(email).then(
         function () {
-          copyBtn.textContent = 'Copied!';
+          var isEs = document.documentElement.lang === 'es';
+          copyBtn.textContent = isEs ? '¡Copiado!' : 'Copied!';
           setTimeout(function () {
-            copyBtn.textContent = 'Copy email address';
+            var es = document.documentElement.lang === 'es';
+            copyBtn.textContent = es
+              ? copyBtn.getAttribute('data-es')
+              : (copyBtn.getAttribute('data-en') || 'Copy email address');
           }, 2000);
         },
         function () {
