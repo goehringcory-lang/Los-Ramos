@@ -5,7 +5,7 @@
 
   <url>
     <loc>https://visitlosramos.com/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://visitlosramos.com/"/>
@@ -63,9 +63,9 @@
 
   <url>
     <loc>https://visitlosramos.com/ferry.html</loc>
-    <lastmod>2026-05-30</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://visitlosramos.com/images/ferry-schedule-san-jorge-ometepe.jpg</image:loc>
       <image:title>Ferry schedule from San Jorge to Ometepe Island</image:title>

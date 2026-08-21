@@ -12,12 +12,14 @@ Hand-coded **static site** — no build step, no framework.
 | Path | Purpose |
 |------|---------|
 | `index.html` | Homepage (all content + JSON-LD schema) |
-| `ferry.html` | San Jorge ⇄ Moyogalpa ferry schedule |
+| `ferry.html` | San Jorge ⇄ Ometepe ferry timetable (crawlable HTML tables + photos) |
 | `404.html` | Custom not-found page (`noindex`) |
 | `css/style.css` | Single stylesheet |
 | `js/main.js` | Vanilla JS: language toggle, lightbox, smooth scroll, mobile menu |
 | `images/` | Photography and graphics |
 | `sitemap.xml`, `robots.txt` | SEO crawl files |
+| `llms.txt` | Plain-text site summary for AI search engines and assistants |
+| `.nojekyll` | Skips Jekyll processing on GitHub Pages (faster deploys) |
 
 ## Local development
 
@@ -116,9 +118,55 @@ unreliable; Realtime and viewing page source for `G-G204EQWS47` are the dependab
 
 ## SEO notes
 
-- Rich JSON-LD on the homepage: `TouristAttraction` / `LocalBusiness`, `LodgingBusiness`,
-  `FAQPage`, `WebSite`; `BreadcrumbList` on the ferry page.
+- Rich JSON-LD on the homepage: `TouristAttraction` / `LocalBusiness` (with `contactPoint`,
+  `knowsLanguage`, `containedInPlace` → Wikipedia, `sameAs` → the community's TripAdvisor
+  listing), `LodgingBusiness`, `FAQPage` (11 questions), `WebSite`. The ferry page carries
+  `BreadcrumbList`, `WebPage`, and `BoatTrip` structured data.
 - Bilingual (English/Spanish) via `data-es` attributes toggled client-side; `hreflang` alternates
   declared for `en`, `es`, and `x-default`.
 - Image sitemap with descriptive titles in `sitemap.xml`.
 - When page content changes meaningfully, bump the relevant `<lastmod>` date in `sitemap.xml`.
+- **FAQ rule:** the visible FAQ items in `index.html` and the `FAQPage` JSON-LD must stay in
+  sync — Google requires the schema to match on-page content. Edit both together.
+- **Ferry schedule rule:** the timetable lives in crawlable HTML tables in `ferry.html` (search
+  engines and AI assistants cannot read the photos). When the port posts a new schedule, update
+  the tables **and** the photos **and** the "photographed [month year]" note, then bump
+  `<lastmod>`.
+
+## AI search (ChatGPT, Claude, Perplexity, Google AI Overviews)
+
+- `llms.txt` at the site root is a plain-text summary (programs, prices, booking email, travel
+  directions) that AI crawlers can ingest cheaply. Keep it in sync when prices or programs
+  change — it is the most likely text to be quoted verbatim by an AI assistant.
+- `robots.txt` explicitly allows the major AI crawlers (GPTBot, ClaudeBot, PerplexityBot,
+  Google-Extended, etc.). This is deliberate: for a site whose goal is visibility, being
+  citable by AI assistants is free distribution.
+- The FAQ answers are written to be quotable as standalone answers ("How do I get to Ometepe
+  from Costa Rica?", "Is Ometepe safe?") — this is what AI engines lift into responses.
+
+## Growing traffic beyond the site (off-page checklist)
+
+Most ranking gains for a small local site come from listings and links, not code. In rough
+order of impact:
+
+1. **Google Search Console** — verify the property (see above), submit `sitemap.xml`, and
+   request indexing of `/` and `/ferry.html` after significant updates.
+2. **Google Business Profile** ([business.google.com](https://business.google.com)) — create a
+   free profile for "Los Ramos Community Tourism" (category: Tour operator / Homestay), pinned
+   to the village on the map, with photos, prices, the booking email, and a link to
+   visitlosramos.com. This is what puts the community on Google Maps and in the local pack.
+3. **TripAdvisor** — the community already has a listing with reviews:
+   [Los Ramos on TripAdvisor](https://www.tripadvisor.com/Attraction_Review-g304024-d2695343-Reviews-Los_Ramos-Isla_de_Ometepe_Rivas_Department.html).
+   Claim it via TripAdvisor's owner center, add the website link and fresh photos, and ask
+   happy visitors to leave a review — recent reviews move ranking on both TripAdvisor and
+   Google.
+4. **Bing Webmaster Tools** ([bing.com/webmasters](https://www.bing.com/webmasters)) — one-click
+   import from Search Console. Bing powers ChatGPT search and DuckDuckGo.
+5. **Ask for links from sites travelers already read**: Ometepe hostels and hotels ("things to
+   do" pages), travel bloggers who visited, volunteer/NGO partners, and the VIAnica directory.
+   One genuine link from an Ometepe hostel's website is worth more than any code change.
+6. **Wikivoyage** — the Ometepe article accepts listings of genuine attractions; add Los Ramos
+   with factual, non-promotional wording per their guidelines.
+7. **Ask every guest** to post a review (TripAdvisor or Google) and tag the community on
+   social media. Word of mouth is the community's strongest asset — reviews make it visible
+   to search engines.
