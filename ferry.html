@@ -15,9 +15,9 @@
   </script>
 
   <!-- Primary SEO -->
-  <title>Ometepe Ferry Schedule — San Jorge to Moyogalpa | Los Ramos</title>
-  <meta name="description" content="Current ferry schedule between San Jorge (Rivas) and Moyogalpa on Ometepe Island, Nicaragua. Plan your trip to Los Ramos cultural immersion community.">
-  <meta name="keywords" content="Ometepe ferry schedule, San Jorge ferry, Moyogalpa ferry, Nicaragua ferry, Lake Nicaragua, Ometepe Island travel">
+  <title>Ometepe Ferry Schedule — San Jorge to Moyogalpa Times | Los Ramos</title>
+  <meta name="description" content="Full ferry and boat timetable between San Jorge (Rivas) and Ometepe Island, Nicaragua — every departure time to Moyogalpa and San José del Sur, in both directions. Plan your trip to Los Ramos.">
+  <meta name="keywords" content="Ometepe ferry schedule, San Jorge ferry times, Moyogalpa ferry, San José del Sur ferry, Nicaragua ferry, Lake Nicaragua, Ometepe Island travel, how to get to Ometepe">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="canonical" href="https://visitlosramos.com/ferry.html">
@@ -31,8 +31,8 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Los Ramos">
   <meta property="og:url" content="https://visitlosramos.com/ferry.html">
-  <meta property="og:title" content="Ometepe Ferry Schedule — San Jorge to Moyogalpa">
-  <meta property="og:description" content="Current ferry schedule between San Jorge and Ometepe Island, Nicaragua. Plan your trip to Los Ramos.">
+  <meta property="og:title" content="Ometepe Ferry Schedule — San Jorge to Moyogalpa Times">
+  <meta property="og:description" content="Every ferry and boat departure between San Jorge and Ometepe Island, Nicaragua — full timetable in both directions, including San José del Sur.">
   <meta property="og:image" content="https://visitlosramos.com/images/ferry-schedule-san-jorge-ometepe.jpg">
   <meta property="og:image:width" content="599">
   <meta property="og:image:height" content="542">
@@ -42,8 +42,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ometepe Ferry Schedule — San Jorge to Moyogalpa">
-  <meta name="twitter:description" content="Plan your trip to Ometepe Island, Nicaragua with the latest San Jorge–Moyogalpa ferry times.">
+  <meta name="twitter:title" content="Ometepe Ferry Schedule — San Jorge to Moyogalpa Times">
+  <meta name="twitter:description" content="Every ferry and boat departure between San Jorge and Ometepe Island, Nicaragua — full timetable in both directions.">
   <meta name="twitter:image" content="https://visitlosramos.com/images/ferry-schedule-san-jorge-ometepe.jpg">
   <meta name="twitter:image:alt" content="Ferry schedule board for the San Jorge to Moyogalpa crossing to Ometepe Island, Nicaragua">
 
@@ -61,23 +61,69 @@
 
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Breadcrumb structured data -->
+  <!-- Structured data: breadcrumb + timetable page -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Los Ramos",
-        "item": "https://visitlosramos.com/"
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Los Ramos",
+            "item": "https://visitlosramos.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Ometepe Ferry Schedule",
+            "item": "https://visitlosramos.com/ferry.html"
+          }
+        ]
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Ometepe Ferry Schedule",
-        "item": "https://visitlosramos.com/ferry.html"
+        "@type": "WebPage",
+        "@id": "https://visitlosramos.com/ferry.html",
+        "url": "https://visitlosramos.com/ferry.html",
+        "name": "Ometepe Ferry Schedule — San Jorge to Moyogalpa Times",
+        "description": "Full ferry and boat timetable between San Jorge (Rivas) and Ometepe Island, Nicaragua, in both directions, including departures to Moyogalpa and San José del Sur.",
+        "inLanguage": ["en", "es"],
+        "dateModified": "2026-08-21",
+        "isPartOf": { "@id": "https://visitlosramos.com/#website" },
+        "about": [
+          {
+            "@type": "BoatTrip",
+            "name": "San Jorge to Ometepe Island ferry",
+            "description": "Passenger ferries and boats crossing Lake Nicaragua from San Jorge (Rivas) to Moyogalpa and San José del Sur on Ometepe Island. The crossing takes about one hour.",
+            "departureBoatTerminal": {
+              "@type": "BoatTerminal",
+              "name": "San Jorge Port",
+              "address": { "@type": "PostalAddress", "addressLocality": "San Jorge", "addressRegion": "Rivas", "addressCountry": "NI" }
+            },
+            "arrivalBoatTerminal": {
+              "@type": "BoatTerminal",
+              "name": "Moyogalpa Port",
+              "address": { "@type": "PostalAddress", "addressLocality": "Moyogalpa, Ometepe Island", "addressRegion": "Rivas", "addressCountry": "NI" }
+            }
+          },
+          {
+            "@type": "BoatTrip",
+            "name": "Ometepe Island to San Jorge ferry",
+            "description": "Passenger ferries and boats crossing Lake Nicaragua from Moyogalpa and San José del Sur on Ometepe Island to San Jorge (Rivas). The crossing takes about one hour.",
+            "departureBoatTerminal": {
+              "@type": "BoatTerminal",
+              "name": "Moyogalpa Port",
+              "address": { "@type": "PostalAddress", "addressLocality": "Moyogalpa, Ometepe Island", "addressRegion": "Rivas", "addressCountry": "NI" }
+            },
+            "arrivalBoatTerminal": {
+              "@type": "BoatTerminal",
+              "name": "San Jorge Port",
+              "address": { "@type": "PostalAddress", "addressLocality": "San Jorge", "addressRegion": "Rivas", "addressCountry": "NI" }
+            }
+          }
+        ]
       }
     ]
   }
@@ -85,29 +131,64 @@
   <style>
     .ferry-page { padding-top: calc(var(--nav-height) + 40px); }
     .ferry-header { text-align: center; margin-bottom: 48px; }
-    .ferry-header p { margin: 16px auto 0; color: var(--color-earth-mid); font-size: 1.1rem; }
-    .ferry-schedules { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .ferry-header p { margin: 16px auto 0; max-width: 720px; color: var(--color-earth-mid); font-size: 1.1rem; }
+    .ferry-schedules { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 48px; align-items: start; }
     .ferry-schedule-item { text-align: center; }
-    .ferry-schedule-item h3 { margin-bottom: 16px; }
+    .ferry-schedule-item h2, .ferry-schedule-item h3 { margin-bottom: 16px; }
     .ferry-schedule-item img {
       width: 100%;
       max-width: 600px;
+      margin: 0 auto;
       border-radius: var(--border-radius);
       box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
-    .ferry-back {
-      text-align: center;
-      margin-top: 32px;
+    .ferry-table-wrap { overflow-x: auto; }
+    .ferry-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-accent);
+      font-size: 0.95rem;
+      text-align: left;
+      background: var(--color-white);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
+    .ferry-table th {
+      background: var(--color-primary-dark);
+      color: var(--color-white);
+      font-weight: 600;
+      padding: 12px 16px;
+    }
+    .ferry-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--color-earth-light);
+    }
+    .ferry-table tbody tr:nth-child(even) { background: var(--color-earth-light); }
+    .ferry-table tbody tr:last-child td { border-bottom: none; }
+    .ferry-table .port-sanjose td { background: #FBEFC9; }
+    .ferry-table td:first-child { font-weight: 600; white-space: nowrap; }
     .ferry-note {
       text-align: center;
-      max-width: 600px;
+      max-width: 640px;
       margin: 0 auto 40px;
       color: var(--color-earth-mid);
       font-size: 0.95rem;
       background: var(--color-earth-light);
       padding: 20px;
       border-radius: 8px;
+    }
+    .ferry-tips {
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+    .ferry-tips h2 { text-align: center; margin-bottom: 16px; }
+    .ferry-tips ul { list-style: disc; padding-left: 24px; color: var(--color-earth-mid); }
+    .ferry-tips li { margin-bottom: 10px; }
+    .ferry-photos-heading { text-align: center; margin-bottom: 24px; }
+    .ferry-back {
+      text-align: center;
+      margin-top: 32px;
     }
     @media (max-width: 768px) {
       .ferry-schedules { grid-template-columns: 1fr; }
@@ -127,13 +208,17 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#programs">Programs</a></li>
-        <li><a href="index.html#homestays">Homestays</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
-        <li><a href="index.html#getting-here">Getting Here</a></li>
-        <li><a href="index.html#contact" class="nav-cta">Book Now</a></li>
+        <li><a href="index.html#about" data-es="Nosotros">About</a></li>
+        <li><a href="index.html#programs" data-es="Programas">Programs</a></li>
+        <li><a href="index.html#homestays" data-es="Hospedaje">Homestays</a></li>
+        <li><a href="index.html#faq" data-es="Preguntas">FAQ</a></li>
+        <li><a href="index.html#getting-here" data-es="Cómo Llegar">Getting Here</a></li>
+        <li><a href="index.html#contact" class="nav-cta" data-es="Reservar">Book Now</a></li>
       </ul>
+      <button class="lang-toggle" aria-label="Switch language" title="Cambiar idioma">
+        <span class="lang-toggle-en">ES</span>
+        <span class="lang-toggle-es" style="display:none;">EN</span>
+      </button>
     </div>
     <div class="nav-overlay" aria-hidden="true"></div>
   </nav>
@@ -141,28 +226,112 @@
   <main id="main" class="ferry-page section-padding">
     <div class="container">
       <div class="ferry-header">
-        <span class="about-label">Getting Here</span>
-        <h1>Ometepe Ferry Schedule</h1>
-        <p>Ferries run daily between San Jorge (mainland) and Moyogalpa (Ometepe Island). From Moyogalpa, Los Ramos is 16 km south — we can help arrange transport.</p>
+        <span class="about-label" data-es="Cómo Llegar">Getting Here</span>
+        <h1 data-es="Horario del Ferry de Ometepe">Ometepe Ferry Schedule</h1>
+        <p data-es="Ferris y botes de pasajeros cruzan el Lago de Nicaragua todos los días entre San Jorge (Rivas, en tierra firme) y la Isla de Ometepe. La travesía dura aproximadamente una hora. La mayoría de las salidas llegan a Moyogalpa; algunas llegan a San José del Sur, más al sur por la costa hacia Los Ramos. Desde el puerto de Moyogalpa, Los Ramos está a 16 km al sur — podemos ayudarte a organizar el transporte.">Passenger ferries and boats cross Lake Nicaragua every day between San Jorge (Rivas, on the mainland) and Ometepe Island. The crossing takes about one hour. Most departures serve Moyogalpa; a few serve San José del Sur, further down the lakeshore toward Los Ramos. From Moyogalpa port, Los Ramos is 16 km south — we can help arrange transport.</p>
       </div>
 
-      <div class="ferry-note">
-        Schedules may change seasonally. We recommend confirming times locally or emailing us at <a href="mailto:losramoscommunity@gmail.com">losramoscommunity@gmail.com</a> before your trip.
+      <div class="ferry-note" data-es="Horario según lo publicado en el puerto (fotografiado en marzo de 2026). Los horarios pueden cambiar por temporada o clima — recomendamos confirmar localmente o escribirnos a <a href='mailto:losramoscommunity@gmail.com'>losramoscommunity@gmail.com</a> antes de tu viaje.">
+        Schedule as posted at the port (photographed March 2026). Times can change with the season or weather — we recommend confirming locally or emailing us at <a href="mailto:losramoscommunity@gmail.com">losramoscommunity@gmail.com</a> before your trip.
       </div>
 
       <div class="ferry-schedules">
         <div class="ferry-schedule-item">
-          <h3>San Jorge &rarr; Ometepe</h3>
-          <img src="images/ferry-schedule-san-jorge-ometepe.jpg" alt="Ferry schedule from San Jorge to Ometepe Island showing departure times" width="599" height="542">
+          <h2 id="from-san-jorge" data-es="De San Jorge a Ometepe">San Jorge &rarr; Ometepe</h2>
+          <div class="ferry-table-wrap">
+            <table class="ferry-table" aria-labelledby="from-san-jorge">
+              <thead>
+                <tr>
+                  <th scope="col" data-es="Hora">Time</th>
+                  <th scope="col" data-es="Embarcación">Vessel</th>
+                  <th scope="col" data-es="Llega a">Arrives at</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>7:00</td><td>Ferry (Che)</td><td>Moyogalpa</td></tr>
+                <tr><td>7:45</td><td>Ferry</td><td>Moyogalpa</td></tr>
+                <tr><td>8:30</td><td>Ferry</td><td>Moyogalpa</td></tr>
+                <tr><td>9:00</td><td>Boat (Karen María)</td><td>Moyogalpa</td></tr>
+                <tr class="port-sanjose"><td>9:30</td><td>Ferry</td><td>San José del Sur</td></tr>
+                <tr class="port-sanjose"><td>10:00</td><td>Boat (Mozorola)</td><td>San José del Sur</td></tr>
+                <tr><td>10:30</td><td>Ferry</td><td>Moyogalpa</td></tr>
+                <tr><td>11:00</td><td>Boat (Estrella del Sur)</td><td>Moyogalpa</td></tr>
+                <tr><td>12:00</td><td>Ferry</td><td>Moyogalpa</td></tr>
+                <tr><td>12:30</td><td>Boat (Santa Martha)</td><td>Moyogalpa</td></tr>
+                <tr><td>13:30</td><td>Boat (Karen María)</td><td>Moyogalpa</td></tr>
+                <tr><td>14:30</td><td>Ferry</td><td>Moyogalpa</td></tr>
+                <tr><td>15:30</td><td>Boat (Estrella del Sur)</td><td>Moyogalpa</td></tr>
+                <tr><td>16:00</td><td>Ferry (Che)</td><td>Moyogalpa</td></tr>
+                <tr><td>16:30</td><td>Ferry</td><td>Moyogalpa</td></tr>
+                <tr class="port-sanjose"><td>16:40</td><td>Boat (Mozorola)</td><td>San José del Sur</td></tr>
+                <tr><td>17:00</td><td>Boat (Santa Martha)</td><td>Moyogalpa</td></tr>
+                <tr class="port-sanjose"><td>17:00</td><td>Ferry</td><td>San José del Sur</td></tr>
+                <tr><td>17:30</td><td>Ferry</td><td>Moyogalpa</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="ferry-schedule-item">
+          <h2 id="from-ometepe" data-es="De Ometepe a San Jorge">Ometepe &rarr; San Jorge</h2>
+          <div class="ferry-table-wrap">
+            <table class="ferry-table" aria-labelledby="from-ometepe">
+              <thead>
+                <tr>
+                  <th scope="col" data-es="Hora">Time</th>
+                  <th scope="col" data-es="Embarcación">Vessel</th>
+                  <th scope="col" data-es="Sale de">Departs from</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>5:30</td><td>Boat (Karen María)</td><td>Moyogalpa</td></tr>
+                <tr class="port-sanjose"><td>5:40</td><td>Boat (Mozorola)</td><td>San José del Sur</td></tr>
+                <tr><td>6:00</td><td>Ferry</td><td>Moyogalpa</td></tr>
+                <tr><td>6:30</td><td>Boat (Santa Martha)</td><td>Moyogalpa</td></tr>
+                <tr><td>6:45</td><td>Ferry</td><td>Moyogalpa</td></tr>
+                <tr><td>7:00</td><td>Boat (Estrella del Sur)</td><td>Moyogalpa</td></tr>
+                <tr class="port-sanjose"><td>7:30</td><td>Ferry</td><td>San José del Sur</td></tr>
+                <tr><td>9:00</td><td>Ferry</td><td>Moyogalpa</td></tr>
+                <tr><td>10:00</td><td>Ferry</td><td>Moyogalpa</td></tr>
+                <tr><td>11:00</td><td>Ferry (Che)</td><td>Moyogalpa</td></tr>
+                <tr><td>11:30</td><td>Boat (Karen María)</td><td>Moyogalpa</td></tr>
+                <tr><td>12:30</td><td>Ferry</td><td>Moyogalpa</td></tr>
+                <tr><td>13:00</td><td>Boat (Estrella del Sur)</td><td>Moyogalpa</td></tr>
+                <tr class="port-sanjose"><td>13:30</td><td>Boat (Mozorola)</td><td>San José del Sur</td></tr>
+                <tr><td>14:00</td><td>Ferry</td><td>Moyogalpa</td></tr>
+                <tr><td>15:00</td><td>Boat (Santa Martha)</td><td>Moyogalpa</td></tr>
+                <tr class="port-sanjose"><td>15:20</td><td>Ferry</td><td>San José del Sur</td></tr>
+                <tr><td>16:00</td><td>Ferry</td><td>Moyogalpa</td></tr>
+                <tr><td>17:30</td><td>Ferry (Che)</td><td>Moyogalpa</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="ferry-tips">
+        <h2 data-es="Consejos para el Cruce">Tips for the Crossing</h2>
+        <ul>
+          <li data-es="Los horarios usan el formato de 24 horas (13:30 = 1:30 pm). Las filas resaltadas salen de o llegan a San José del Sur en lugar de Moyogalpa.">Times use the 24-hour clock (13:30 = 1:30 pm). Highlighted rows serve San José del Sur instead of Moyogalpa.</li>
+          <li data-es="Los boletos se compran en el muelle el mismo día — no se necesita reserva para pasajeros a pie.">Tickets are bought at the dock on the day of travel — foot passengers don't need a reservation.</li>
+          <li data-es="Los ferris más grandes llevan vehículos; los botes más pequeños son solo para pasajeros y pueden sentirse movidos cuando el lago está agitado.">The larger ferries carry vehicles; the smaller boats are passenger-only and can feel choppy when the lake is rough.</li>
+          <li data-es="¿Vienes a Los Ramos? Escríbenos con tu hora de llegada y te ayudamos a organizar el transporte desde el puerto — y te decimos qué puerto conviene más para tu visita.">Coming to Los Ramos? Email us your arrival time and we'll help arrange transport from the port — and tell you which port works best for your visit.</li>
+        </ul>
+      </div>
+
+      <h3 class="ferry-photos-heading" data-es="Horarios publicados en el puerto">Schedules as posted at the port</h3>
+      <div class="ferry-schedules">
+        <div class="ferry-schedule-item">
+          <img src="images/ferry-schedule-san-jorge-ometepe.jpg" alt="Photo of the posted ferry schedule from San Jorge to Ometepe Island showing departure times" loading="lazy" width="599" height="542">
         </div>
         <div class="ferry-schedule-item">
-          <h3>Ometepe &rarr; San Jorge</h3>
-          <img src="images/ferry-schedule-ometepe-san-jorge.jpg" alt="Ferry schedule from Ometepe Island to San Jorge showing departure times" width="596" height="543">
+          <img src="images/ferry-schedule-ometepe-san-jorge.jpg" alt="Photo of the posted ferry schedule from Ometepe Island to San Jorge showing departure times" loading="lazy" width="596" height="543">
         </div>
       </div>
 
       <div class="ferry-back">
-        <a href="index.html" class="btn btn-green">&larr; Back to Los Ramos</a>
+        <a href="index.html#programs" class="btn btn-green" data-es="Ver Nuestros Programas">See Our Programs</a>
+        <p style="margin-top:16px;"><a href="index.html" data-es="&larr; Volver a Los Ramos">&larr; Back to Los Ramos</a></p>
       </div>
     </div>
   </main>
@@ -174,11 +343,11 @@
           <img src="images/logo.png" alt="Los Ramos logo" width="500" height="500">
         </a>
         <ul class="footer-links">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#programs">Programs</a></li>
-          <li><a href="index.html#homestays">Homestays</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#about" data-es="Nosotros">About</a></li>
+          <li><a href="index.html#programs" data-es="Programas">Programs</a></li>
+          <li><a href="index.html#homestays" data-es="Hospedaje">Homestays</a></li>
+          <li><a href="index.html#faq" data-es="Preguntas">FAQ</a></li>
+          <li><a href="index.html#contact" data-es="Contacto">Contact</a></li>
         </ul>
       </div>
       <p class="footer-copy">&copy; 2026 Los Ramos Community, Ometepe Island, Nicaragua. All rights reserved.</p>
